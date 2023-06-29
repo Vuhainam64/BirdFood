@@ -25,10 +25,10 @@ function App() {
         cred.getIdToken().then((token) => {
           validateUserJWTToken(token).then((data) => {
             if (data) {
-              getAllCartItems(data.user_id).then((items) => {
-                console.log(items);
-                dispatch(setCartItems(items));
-              });
+              // getAllCartItems(data.user_id).then((items) => {
+              //   console.log(items);
+              //   dispatch(setCartItems(items));
+              // });
             }
             dispatch(setUserDetails(data));
           });
@@ -53,8 +53,8 @@ function App() {
         <Route path="/*" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard/*" element={<Dashboard />} />
-        <Route path="/checkout-success" element={<CheckOutSuccess />} />
-        <Route path="/user-orders" element={<UsersOrder />} />
+        {/* <Route path="/checkout-success" element={<CheckOutSuccess />} />
+        <Route path="/user-orders" element={<UsersOrder />} /> */}
       </Routes>
 
       {alert?.type && <Alert type={alert?.type} message={alert?.message} />}
